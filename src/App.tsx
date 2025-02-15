@@ -3,6 +3,10 @@ import { Button } from "./components/ui/button";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import ReactGA from "react-ga4";
+
+const TRACKING_ID = "G-J5WVVKL977";
+ReactGA.initialize(TRACKING_ID);
 
 const quotes = [
   "You will do it. I have faith in you.",

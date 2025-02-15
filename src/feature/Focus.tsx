@@ -1,6 +1,7 @@
 import { Button } from "../components/ui/button";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import ReactGA from "react-ga4";
 
 export const Focus = () => {
   const navigate = useNavigate();
@@ -39,6 +40,10 @@ export const Focus = () => {
       }
     }
   };
+
+  useEffect(() => {
+    ReactGA.send({ hitType: "pageview", page: location.pathname });
+  }, []);
 
   // Exit the game (replace with your navigation logic)
   const handleExit = () => {
